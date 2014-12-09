@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <title>Wing Wah Bistro</title>
+   <link rel="icon" media="screen" href="img/url.jpg">
+
+
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body ng-app="MenuItem" ng-controller="MenuItemController">
+
+   <br>
+   <br>
+
+   <header>
+
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+         <div class="container">
+            <div class="navbar-header pull-right">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#">Wing Wah Bistro</a> <a class="navbar-brand" id="num" href="tel:1-206-233-9001">206-233-9001</a>
+            </div>
+            <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+
+                  <li><a class="links" href="#top" title="Home">Home</a>
+                  </li>
+                  <li><a class="links" href="#about" title="About">About</a>
+                  </li>
+                  <li><a class="links" href="#contact" title="Contact">Contact</a>
+                  </li>
+                  <li><a class="links" href="#menu" title="Menu">Menu</a>
+                  </li>
+                  <li><a class="links" href="#feedback" title="Feedback">Feedback</a>
+                  </li>
+
+               </ul>
+               </nav>
+               <!-- //the fixed header that stays on the top -->
+   </header>
+   <div id='top'>
+   </div>
+   
+   <section id="title" class="slide">
+     <div id="banner">
+         <img src="img/banner.png" alt="image" width="650" height="400">
+      </div> 
+	  <hr>
+      <h2 class="heads"> Wing Wah <br/>Bistro </h2>
+      <h3>Homemade food from our kitchen to you</h3>
+      <hr>
+
+   </section>
+   
+   <section id="about" class="row slide">
+
+      <h2 class="heads"> ABOUT </h2>
+      <hr>
+
+      <div id="about">
+         <br>
+         <p>We grew up in Southern China, where the cuisine was influenced by our bustling culture and experiences. This is a mom and pop restaurant located in the heart of Chinatown. We make traditional Chinese and Vietnamese food from scratch so please be patient with us when we are busy. We use the freshest ingredients sourced from the markets of Chinatown so please join us for a traditional experience served in a modern dining setting.
+         </p>
+      </div>
+      
+     	<div class="col-sm-3 col-xs-6">
+            <img src="img/IMG_3633.jpg" name="slide">
+         </div>
+         <div class="col-sm-3 col-xs-6">
+            <img src="img/IMG_3634.jpg" name="slide">
+         </div>
+         <div class="col-sm-3 col-xs-6">
+            <img src="img/IMG_3640.jpg" name="slide">
+         </div>
+         <div class="col-sm-3 col-xs-6">
+            <img src="img/IMG_3652.jpg" name="slide">
+         </div>
+
+   </section>
+   
+   <section id="contact" class="row slide">
+      <div id="bcolor1">
+         <h2 class="heads"> CONTACT </h2>
+         <hr>
+         <br>
+
+         <div class="col-sm-6 col-md-6 " id='map'></div>
+
+         <div id="contact" class=" col-sm-6 col-md-6">
+            <h3>Address: </h3>
+            <p>925 S Jackson St, Seattle, WA 98104</p>
+
+            <h3>Phone</h3>
+            <p><a href="tel:1-206-233-9001">206-233-9001</a>
+            </p>
+
+            <h3>Hours: </h3>
+            <p> Mon, Wed, Thurs, Sun 10:30 am - 9:00 pm </p>
+            <p> Fri, Sat 10:00 am - 10:00 pm </p>
+            <p> Closed on Tuesday </p>
+
+         </div>
+      </div>
+
+   </section>
+
+   <section id="menu" class="row slide">
+      <h2 class="heads"> MENU </h2>
+      <hr>
+      <br>
+      <div class="filter-ui">
+         <input type="text" class="form-control" placeholder="Search..." ng-model="itemSearch">
+
+      </div>
+      <br>
+      <div class="menuitems">
+         <ul id="items" ng-repeat="item in filteredItems = (items | filter : itemSearch | orderBy : sortCol : reverse)">
+            <li class="col-sm-4 col-md-4">
+               {{item.name}} <span class="price">{{item.price}}</span>
+            </li>
+
+         </ul>
+      </div>
+   </section>
+   <br>
+
+   <section id="feedback" class="row slide">
+      <h2 class="heads"> FEEDBACK </h2>
+      <hr>
+
+      <h3>Give us feedback!</h3>
+      <form method="post" onsubmit="return(validateComment())" id="reviewForm" action="MAILTO:wingwahbistro@gmail.com" enctype="text/plain">
+         <div class="col-sm-12 col-md-4">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" name="name" id="name" placeholder="Your name (optional)" />
+         </div>
+         <div class="col-sm-12 col-md-4">
+            <label for=" email">Email</label>
+            <input class="form-control " type="text" name="email" id="email" placeholder="Your email (optional)" />
+         </div>
+         <div class="col-sm-12 col-md-4">
+            <label for="phone">Phone</label>
+            <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone number (optional)" />
+         </div>
+
+         <div class="col-md-12">
+            <label for="review">Comment*</label>
+            <textarea class="form-control " id="commentBody" name="comment" placeholder="Insert your comment here"></textarea>
+         </div>
+
+         <div class="col-md-4">
+            <button type="submit" align="center" class="btn btn-success" value="send" id="submit" data-container="body" data-toggle="popover" data-placement="right" data-content="Please enter your comment!">Submit comment</button>
+         </div>
+
+      </form>
+
+      <div id="links" class="col-md-12">
+
+         <h3>Check out some of our customer reviews!</h3>
+
+         <a href="http://www.yelp.com/biz/wing-wah-bistro-seattle">
+            <button type="button" class="btn btn-primary">Yelp Reviews</button>
+         </a>
+
+         <a href="https://plus.google.com/100078494746948343139/about?gl=us&hl=en">
+            <button type="button" class="btn btn-primary">Google+ Reviews</button>
+         </a>
+
+
+         <a href="http://www.urbanspoon.com/r/1/1655372/restaurant/International-District/Wing-Wah-Bistro-Seattle">
+            <button type="button" class="btn btn-primary">Urbanspoon Reviews</button>
+         </a>
+
+
+         <a href="http://reviews.talktothemanager.com/us/wa/seattle/international-district/wing-wah-bistro-9787/">
+            <button type="button" class="btn btn-primary">Talk to the Manager</button>
+         </a>
+
+         <a href="http://www.buzzfeed.com/clairepires/32-reasons-why-mary-lambert-stays-in-seattle-even-though-eve">
+            <button type="button" class="btn btn-primary">Mary Lambert's Review</button>
+         </a>
+         
+
+      </div>
+
+   </section>
+   <br>
+   <footer id="footer">
+      <p id="info"> Wing Wah Bistro, call us for yummy fast food! <a href="tel:1-206-233-9001">(206) 233-9001</a>
+         <a href="#top" class="toTop" title="top">Back to top</a>
+      </p>
+   </footer>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACVpu67iYEz9YuQeR8pHCb0by7KXCa56I"></script>
+   <script src="js/Menu.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+   <script src="js/jquery-2.1.1.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/app.js"></script>
+
+</body>
+
+</html>

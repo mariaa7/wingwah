@@ -1,0 +1,252 @@
+
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,300italic);
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative:600);
+
+@font-face {
+	font-family: font;
+	src: url(../fonts/molesk.ttf);
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+
+	font-family: 'Titillium Web', sans-serif;
+	
+}
+#num {
+	font-family: 'Titillium Web', sans-serif;
+}
+.navbar-brand {
+	font-family: font, sans-serif;
+}
+
+.slide {
+	width: 100%;
+	height: 600px;
+	font-size: 30px;
+	-index: -20;
+	padding: 50px;
+
+}
+ul {
+	list-style-type: none;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+.heads {
+	font-family: font, sans-serif;
+	font-size: 60px;
+	text-align: center;
+	
+}
+header {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	padding-left: 15%;
+	padding-right: 15%;
+	top: 0;
+	z-index: 1;
+	
+}
+
+#banner {
+position: absolute;
+top:100px;
+left:auto;
+width:100%;
+}
+
+#title { height: auto; background-color: #ecedec;}
+#title h2 { color: #9c1a1a; font-size: 36pt; }
+
+@media (min-width: 768px) {
+	#title h2 { color: #9c1a1a; font-size: 56pt; }
+}
+#title h3 { text-align: center; text-transform: uppercase; }
+
+
+
+#about {
+	padding-bottom: 0px;
+	font-size: 20px;
+}
+
+.responsive-image{
+        height:auto;
+        
+        z-index: -50;
+}
+
+#about img {
+	
+    
+   width: 100%;
+   height: auto; 
+
+}
+
+#map {
+
+	height: 350px;
+	margin: 0;
+	padding: 0;
+	-index: -20;
+
+}
+
+#contact {
+	font-size: 20px; 
+	text-align: center;
+	background-color: #ecedec;
+	
+}
+
+#menu {
+	font-size:  12px;
+	padding-bottom: 0px;
+	background-color: #9c1a1a;
+
+}
+#menu .heads {
+	color: white;
+}
+
+.menuitems {  
+	margin-right: auto;
+	margin-left: auto;
+    height: 350px !important;
+    width:90%;
+    overflow: scroll;
+    background-color: white;
+
+}​
+
+.items {
+    margin: 0;
+    padding: 0;
+    border: 10px solid black;
+
+}
+.item {
+	
+    list-style: none;
+    
+    margin-bottom: 0.5em;
+    font-size: 20px;
+    clear: both;
+}
+
+.invalid {
+	border: 1px solid red;
+}	
+
+.filter-ui {
+	margin: auto;
+	width: 40%;
+	z-index: -20;
+
+}
+.price {
+	float: right;
+}
+
+#feedback label {
+	font-size: 20px;
+}
+
+.review {
+	list-style: none;
+}
+.btn-success {
+	background-color: gray;
+}
+
+.btn-primary {
+	background-color:  #B3021F;
+	margin: 10px;
+}
+.btn-primary:hover {
+	background-color: #FFCC00;
+}
+
+#footer {
+	width:90%;
+	text-align: center;
+}
+a.toTop {
+	float:right;
+}
+
+@media screen and (max-width: 991px) {
+
+    #map {
+		height: 350px;
+		margin: 0;
+		padding: 0;
+	}
+	#pics {
+		display: none;
+	}
+
+	#contact p{
+		font-size: 18px;
+	}
+	#banner {
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.heads {
+		font-size: 24px;
+	}
+	#about {
+		font-size: 14px;
+	}
+	#map {
+		height: 275px;
+	}
+	#contact p{
+		font-size: 14px;
+	}
+	#contact h3 {
+		font-size: 16px;
+	}
+	#review {
+		font-size: 18px;
+	}
+	#pics {
+		display: none;
+	}
+	.slide {
+		height: auto;
+	}
+
+	.menuitems {  
+	    height: 400px !important;
+	    margin-bottom: 10px;
+	    width:70%;
+	}​
+	#banner {
+		display: none;
+	}
+}
+
+
+@media screen and (min-width: 992px) {
+	#map {
+		vertical-align: center;
+	}
+
+}
