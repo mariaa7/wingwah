@@ -59,6 +59,10 @@ header {
 	
 }
 
+.popover {
+	z-index: 0;
+}
+
 #banner {
 position: absolute;
 top:100px;
@@ -196,6 +200,9 @@ a.toTop {
 	}
 	#pics {
 		display: none;
+	}
+	.slide {
+		height: auto;
 	}
 
 	#contact p{
